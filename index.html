@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script>
+			(function(apiKey){
+				(function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+				v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+					o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+					y=e.createElement(n);y.async=!0;y.src='https://pendo-dev-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+					z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+			
+					// Call this whenever information about your visitors becomes available
+					// secret a9782c23-1728-476f-7c4d-a2f18cb02ce9
+					// enter your JWT 
+					// pendo.initialize({
+					// 	jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2aXNpdG9yIjp7ImlkIjoidGVzdF8xIiwiZW1haWwiOiJ0ZXN0XzFAcGVuZG8uaW8iLCJmdWxsX25hbWUiOiJ0ZXN0XzEifSwiYWNjb3VudCI6eyJpZCI6InRlc3RfMSIsIm5hbWUiOiJ0ZXN0XzEiLCJtb250aGx5X3ZhbHVlIjoxMjM0LCJpc19wYXlpbmciOnRydWV9LCJub25jZSI6Ijg0Nzc3NyJ9.OJeggI09oMaarbVIKCSTumt05M2TN8onXXgtJAKcqIo',
+					// });
+					// pendo.initialize({
+					// 	jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2aXNpdG9yIjp7ImlkIjoidGVzdF8zIiwiZW1haWwiOiJ0ZXN0XzNAcGVuZG8uaW8iLCJmdWxsX25hbWUiOiJ0ZXN0XzMifSwiYWNjb3VudCI6eyJpZCI6InRlc3RfMyIsIm5hbWUiOiJ0ZXN0XzMiLCJtb250aGx5X3ZhbHVlIjoxMjM0MDAsImlzX3BheWluZyI6dHJ1ZX0sIm5vbmNlIjoiMTI4Nzg3MjIifQ.6VCiDyxJdAofpwLOmKTh0jifJmVxmv_Nbrxk6Mgz67A',
+					// 	signingKeyName: 'feed-feed-tywLW'
+					// });
+					pendo.initialize({
+						"visitor": {
+							"id": "rc-test-user",	
+							"email": "rc-test-user@pendo.io",
+							"full_name": "rc-test-user"
+						},
+						"account": {
+							"id": "rc-test-account",
+							"name": "rc-test-account",
+							"monthly_value": 53000,
+							"is_paying": true
+						},
+					});
+			})('d6d6c2a3-db65-4ee8-6ec3-f34062794113');
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-light bg-light">
+                    <a href="page-two.html">Go to page 2</a>
+        </nav>
+        <div class="container">
+			<button id="one-click-button" type="button" class="btn btn-info">1 click button 1</button>
+			<button id="one-click-button-two" type="button" class="btn btn-info">1 click button 2</button>
+            <button id="hundred-clicks-button" type="button" class="btn btn-info">100 clicks button 1</button>
+        </div>
+        <div class="container">
+            <h2>This is page 1</h2>
+            <div class="row">
+              <div class="main-content col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="page-header">
+                  <h1>About JWT Testing</h1>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="https://image.shutterstock.com/image-photo/angry-furious-businesswoman-throws-punch-600w-216800617.jpg" alt="Some pic" class="img-thumbnail">
+                  </div>
+                  <div class="col-md-7">           
+                      <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters. Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.</p>
+                  </div>
+                </div>
+              </div>
+	</body>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		const buttonOne = document.getElementById("one-click-button");
+
+		document.getElementById("hundred-clicks-button").onclick = () => {
+			for (let index = 0; index < 100; index++) {
+				buttonOne.click();
+			}
+		};
+		document.getElementById("one-click-button").onclick = () => {
+				console.log("clicking single button 1");
+		};
+		document.getElementById("one-click-button-two").onclick = () => {
+				console.log("clicking single button 2");
+		};
+	</script>
+</html>
